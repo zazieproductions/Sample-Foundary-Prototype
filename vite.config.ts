@@ -21,5 +21,9 @@ export default defineConfig(async ({ mode }) => {
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
+    server: {
+      // Allow sandboxed/live previews (e.g. 5173-<id>.e2b.app) in addition to localhost.
+      allowedHosts: ['.e2b.app', '.localhost'],
+    },
   };
 })
