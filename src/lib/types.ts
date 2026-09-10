@@ -13,6 +13,8 @@ export interface Sample {
   category: Category; tags: string[]; bpm: number | null; key: string | null;
   status: Status; favorite: boolean; createdAt: number; analysis: AudioAnalysis;
   trim: boolean; normalize: boolean; fade: boolean;
+  /** True while the filename is kept in sync with analysis (BPM · original name · genre). */
+  autoNamed?: boolean;
 }
 export interface Pack { id: string; name: string; description: string; author: string; createdAt: number; starter?: boolean }
 export interface Workspace { samples: Sample[]; packs: Pack[]; activePackId: string }
